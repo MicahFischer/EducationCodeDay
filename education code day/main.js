@@ -18,3 +18,12 @@ function handleLanguage(event){
   language = event.target.value;
   console.log(language);
 }
+
+function whocountry(event){
+  country = event.target.value;
+  console.log(counrty);
+}
+function who(event){
+  teachstu = event.target.value;
+  console.log(teachstu);
+}
