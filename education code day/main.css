@@ -5,8 +5,6 @@
     margin: 0px;
 }
 
-
-
 /* KaiOS landscape devices (320x240)
 @media screen and (orientation: landscape) {
   styles
@@ -15,6 +13,47 @@
 /* KaiOS portrait devices (240x320) */
 /*@media only screen and (orientation : portrait) {}*/
 
+.menu--main {
+  display: block;
+  position: absolute;
+  bottom: 0;
+
+  li {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    padding: 15px 20px;
+    background-color: $menu-bg;
+    margin-right: -4px;  // get rid of spacing between list items
+    //transition: all 0.2s;
+
+    &:hover {
+      background-color: $menu-hover;
+    }
+    &:hover .sub-menu {
+      max-height: 300px;
+      visibility: visible;
+      bottom: 100%;  // align to top of parent element
+      transition: all 0.4s linear;
+    }
+  }
+  .sub-menu {
+    display: block;
+    visibility: hidden;
+    position: absolute;
+    //top: 100%;  // align to bottom of
+    left: 0;
+    box-shadow: none;
+    max-height: 0;
+    width: 150px;
+
+    overflow: hidden;
+
+    li {
+      display: block;
+    }
+  }
+}
 .avatar {
     vertical-align: middle;
     width: 4.33em;
@@ -29,14 +68,28 @@
     float: left;
     position: relative;
     display: inline-block;
+    bottom:0;
 }
-
+.dropdown2 {
+    float: left;
+    position: relative;
+    display: block;
+}
 .dropdown-content {
     display: none;
     width: 90vw;
     overflow: auto;
     z-index: 1;
     box-sizing: border-box;
+}
+
+.dropdown-content-top {
+    display: none;
+    width: 90vw;
+    overflow: auto;
+    z-index: 1;
+    box-sizing: border-box;
+    margin-top: -90vw;
 }
 
 i {
